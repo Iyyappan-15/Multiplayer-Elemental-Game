@@ -1,4 +1,4 @@
-# 🎮 Multiplayer Element Game  
+# 🎮 Multiplayer Elemental Game  
 A modern, animated, interactive version of the classic **Stone–Paper–Scissors** concept — expanded with **Fire, Water, and Air** elements!  
 This is a **2-Player battle game** with smooth UI, battle animations, sound-less effects, scoring, and round history.
 
