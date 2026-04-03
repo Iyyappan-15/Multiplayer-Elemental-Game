@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multiplayer Element Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+</head>
+<body>
+  <h1>🌟 NextGen RPS 🌟</h1>
+  
+  <div class="container">
+    <div class="player" id="p1">
+      <h2>Player 1</h2>
+      <select id="move1" onchange="chooseMove1()">
+        <option value="">Choose Move</option>
+        <option value="Stone">Stone</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+        <option value="Water">Water</option>
+        <option value="Air">Air</option>
+        <option value="Fire">Fire</option>
+      </select>
+    </div>
+
+    <div class="player" id="p2">
+      <h2>Player 2</h2>
+      <select id="move2" disabled>
+        <option value="">Choose Move</option>
+        <option value="Stone">Stone</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+        <option value="Water">Water</option>
+        <option value="Air">Air</option>
+        <option value="Fire">Fire</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="playBtn" onclick="playGame()" disabled>Play Round</button>
+  </div>
+  <div id="battleScene" class="battle-overlay" style="display: none;">
+  <div class="battle-box animate">
+    <span id="p1Icon">🌀</span>
+    <span class="vs">⚔️</span>
+    <span id="p2Icon">🌀</span>
+  </div>
+</div>
+  <div id="result"></div>
+
+  <div id="scores">
+    <p>Player 1 Score: <span id="score1">0</span></p>
+    <p>Player 2 Score: <span id="score2">0</span></p>
+  </div>
+
+  <div id="history">
+    <h3>🧾 Round History</h3>
+    <ul id="historyList"></ul>
+  </div>
+
+  <div class="actions">
+    <button onclick="restartGame()" id="restartBtn">🔁 Restart Game</button>
+  </div>
+  <div class="rules-section">
+  <h3>📜 Game Rules</h3>
+  <div class="rule-icons">
+    <button onclick="showRules('basic')">📘 Basic</button>
+    <button onclick="showRules('win')">🏆 Win Conditions</button>
+    <button onclick="showRules('tips')">💡 Tips</button>
+  </div>
+</div>
+
+<div id="rulesModal" class="rules-modal hidden">
+  <div class="rules-content">
+    <span class="close-btn" onclick="closeRules()">×</span>
+    <div id="rulesText"></div>
+  </div>
+</div>
+
+
+  <canvas id="threeCanvas"></canvas>
+  <div id="battleLabels">
+    <div class="battle-label" id="battleLabel1"></div>
+    <div class="battle-label" id="battleLabel2"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+<div class="background">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+
+</html>
